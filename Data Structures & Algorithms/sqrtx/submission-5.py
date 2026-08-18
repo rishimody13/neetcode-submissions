@@ -1,0 +1,11 @@
+class Solution:
+    def mySqrt(self, x: int) -> int:
+        below = True
+        for i in range(x+1):
+            if (i*i == x):
+                return i
+            if (i*i < x):
+                below = True
+            if (i*i > x) and (below):
+                return i-1
+        return 0
